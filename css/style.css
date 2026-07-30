@@ -106,7 +106,7 @@ header nav {
 .hero {
     height: 100vh;
     background: linear-gradient(rgba(7, 27, 90, .82), rgba(7, 27, 90, .82)),
-        url("https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=80");
+        url("../imagens/background.avif");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -506,6 +506,16 @@ header.scrolled {
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
+}
+
+@media(max-width:900px) {
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
 }
 
 .faq-container {
