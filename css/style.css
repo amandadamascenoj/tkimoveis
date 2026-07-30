@@ -499,8 +499,8 @@ header.scrolled {
 
 .reveal {
     opacity: 0;
-    transform: translateY(40px);
-    transition: .6s ease;
+    transform: translateY(25px);
+    transition: .25s ease;
 }
 
 .reveal.active {
@@ -582,25 +582,60 @@ header.scrolled {
 .contact-social {
     display: flex;
     gap: 20px;
-    margin-top: 30px;
+    margin-top: 35px;
 }
 
 
 .contact-social a {
-    width: 45px;
-    height: 45px;
+    width: 48px;
+    height: 48px;
+
     border-radius: 50%;
     background: #c7a046;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+
+    color: #fff;
+    text-decoration: none;
+
     font-size: 22px;
+
     transition: .3s;
 }
 
 
+.contact-social a i {
+    color: #04133d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+    padding: 0;
+
+    line-height: 1;
+}
+
+
 .contact-social a:hover {
-    transform: translateY(-5px);
-    background: #d8b35a;
+    animation: pular .5s ease;
+}
+
+
+@keyframes pular {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
 }

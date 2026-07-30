@@ -17,15 +17,17 @@ window.addEventListener('scroll', () => {
 });
 
 const observer = new IntersectionObserver((entries) => {
+
     entries.forEach(entry => {
+
         if (entry.isIntersecting) {
             entry.target.classList.add('active');
-        } else {
-            entry.target.classList.remove('active');
         }
+
     });
+
 }, {
-    threshold: 0.2
+    threshold: 0.03
 });
 
 document.querySelectorAll('.reveal').forEach(section => {
