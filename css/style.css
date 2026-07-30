@@ -76,6 +76,18 @@ header nav {
     cursor: pointer;
 }
 
+@media(max-width:900px) {
+
+    header nav {
+        position: relative;
+    }
+
+    .menu {
+        top: 70px;
+    }
+
+}
+
 .btn {
     background: #c7a046;
     color: #fff;
@@ -340,20 +352,11 @@ section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    justify-items: center;
 }
 
-.insta-grid>* {
-    grid-column: span 1;
-}
-
-.insta-grid>* {
-    max-width: 100%;
-}
-
-.insta-grid blockquote.instagram-media {
-    min-width: 0 !important;
+.instagram-media {
     width: 100% !important;
+    min-width: unset !important;
     max-width: 100% !important;
 }
 
@@ -378,9 +381,20 @@ section {
 }
 
 @media(max-width:870px) {
+
     .insta-grid {
         grid-template-columns: 1fr;
     }
+
+    .insta-embed {
+        padding: 10px;
+    }
+
+    .instagram-media {
+        width: 100% !important;
+        min-width: 100% !important;
+    }
+
 }
 
 .contact {
@@ -563,4 +577,30 @@ header.scrolled {
 
     transform: rotate(45deg);
 
+}
+
+.contact-social {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+
+.contact-social a {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #c7a046;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 22px;
+    transition: .3s;
+}
+
+
+.contact-social a:hover {
+    transform: translateY(-5px);
+    background: #d8b35a;
 }
