@@ -61,3 +61,28 @@ faqItems.forEach(item => {
 
 });
 
+const instaSection = document.querySelector('#imoveis');
+
+let instagramCarregado = false;
+
+window.addEventListener('scroll', () => {
+
+    if (!instagramCarregado) {
+
+        const posicao = instaSection.getBoundingClientRect().top;
+
+        if (posicao < window.innerHeight) {
+
+            const script = document.createElement('script');
+
+            script.src = "https://www.instagram.com/embed.js";
+
+            document.body.appendChild(script);
+
+            instagramCarregado = true;
+
+        }
+
+    }
+
+});
