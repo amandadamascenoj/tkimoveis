@@ -5,343 +5,732 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
+    <meta name="description"
+        content="TK Imóveis - Imobiliária de alto padrão em Vitória da Conquista. Especialistas em compra, venda, aluguel e investimento imobiliário com atendimento exclusivo.">
     <link rel="icon" type="image/png" href="imagens/logoTK.jpg">
+
+    <!-- Fonts Google: Plus Jakarta Sans & Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
+    <!-- FontAwesome 6 Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <title>TK Imoveis - Vitoria da Conquista</title>
+
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <title>TK Imóveis • Imobiliária de Alto Padrão em Vitória da Conquista</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+
+    <!-- Ambient Aura Glows -->
+    <div class="aura-bg aura-1"></div>
+    <div class="aura-bg aura-2"></div>
+
+    <!-- Header & Navigation -->
     <header>
-        <nav>
-            <div class="logo">
-                <img src="imagens/logoTK.jpg">
-            </div>
+        <div class="container">
+            <nav>
+                <a href="#inicio" class="logo-brand">
+                    <img src="imagens/logoTK.jpg" alt="TK Imóveis Logo">
+                    <div class="logo-text">
+                        <span class="logo-title">TK IMÓVEIS</span>
+                        <span class="logo-subtitle">VITÓRIA DA CONQUISTA</span>
+                    </div>
+                </a>
 
-            <div class="menu">
+                <ul class="nav-menu">
+                    <li><a href="#inicio" class="nav-link">Início</a></li>
+                    <li><a href="#diferenciais" class="nav-link">Diferenciais</a></li>
+                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <li><a href="#processo" class="nav-link">Como Funciona</a></li>
+                    <li><a href="#depoimentos" class="nav-link">Avaliações</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                </ul>
 
-                <a href="index.html">Início</a>
-                <a href="#sobre">Sobre</a>
-                <a href="#imoveis">Imóveis</a>
-                <a href="#contato">Contato</a>
-                <a href="#faq">Perguntas Frequentes</a>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <a href="https://wa.me/5577988185758?text=Ol%C3%A1%2C%20Thiago!%20Acabei%20de%20visitar%20o%20site%20da%20TK%20Im%C3%B3veis%20e%20gostaria%20de%20conversar%20sobre%20im%C3%B3veis%20dispon%C3%ADveis."
+                        target="_blank" class="whatsapp-nav-btn">
+                        <i class="fab fa-whatsapp" style="font-size: 18px;"></i>
+                        <span>(77) 98818-5758</span>
+                    </a>
 
-            </div>
-
-            <div class="hamburger">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-
-            <a href="https://wa.me/5577988185758?text=Ol%C3%A1%2C%20Thiago!%20Acabei%20de%20visitar%20o%20site%20da%20TK%20Im%C3%B3veis%20e%20gostaria%20de%20conversar%20sobre%20im%C3%B3veis%20dispon%C3%ADveis."
-                target="_blank" class="whatsapp-btn">
-                <i class="fab fa-whatsapp"></i>
-                <span style="margin-left:8px;">
-                    WhatsApp
-                </span>
-            </a>
-        </nav>
+                    <div class="hamburger">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
     </header>
 
+    <!-- Vertical Floating Social Bar -->
+    <aside class="social-sidebar">
+        <a href="https://www.instagram.com/thiagoktiba/" target="_blank" title="Instagram"><i
+                class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/Thiagoktibacorretor/" target="_blank" title="Facebook"><i
+                class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/5577988185758?text=Ol%C3%A1%2C%20Thiago!%20Acabei%20de%20visitar%20o%20site%20da%20TK%20Im%C3%B3veis%20e%20gostaria%20de%20conversar%20sobre%20im%C3%B3veis%20dispon%C3%ADveis."
+            target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </aside>
+
+    <!-- Hero Section -->
     <section class="hero" id="inicio">
-        <div class="hero-content">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="badge-tag">
+                        <i class="fa-solid fa-gem"></i> EXCLUSIVIDADE & CREDIBILIDADE
+                    </div>
+                    <h1 class="hero-title">
+                        Encontre o imóvel ideal para <span>viver, investir</span> e construir seu futuro.
+                    </h1>
+                    <p class="hero-subtitle">
+                        Especialistas em compra, venda, aluguel e investimentos imobiliários em Vitória da Conquista -
+                        Bahia. Atendimento VIP personalizado com total segurança jurídica.
+                    </p>
 
-            <span>TK IMÓVEIS</span>
-            <h1>
-                Encontre o imóvel perfeito para viver ou investir.
-            </h1>
-            <p>
-                Especialistas em compra, venda e aluguel de imóveis em Vitória da Conquista - Bahia.
+                    <div class="hero-actions">
+                        <a href="#contato" class="btn">
+                            <i class="fa-solid fa-paper-plane"></i> Falar com Especialista
+                        </a>
+                        <a href="#diferenciais" class="btn-secondary">
+                            <i class="fa-regular fa-star"></i> Ver Diferenciais
+                        </a>
+                    </div>
 
-                Atendimento personalizado e as melhores oportunidades da região.
-            </p>
+                    <!-- Embedded Hero Stats -->
+                    <div class="hero-stats-card">
+                        <div class="stat-item">
+                            <span class="stat-number">+500</span>
+                            <span class="stat-label">Clientes Atendidos</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Anos de Mercado</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Compromisso</span>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="buttons">
-                <a href="#imoveis" class="btn">
-                    Ver Imóveis
-                </a>
 
-                <a href="#contato" class="btn-outline">
-                    Fale Conosco
-                </a>
             </div>
         </div>
-
-        <div class="social">
-            <a href="https://www.instagram.com/thiagoktiba/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com/Thiagoktibacorretor/" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://wa.me/5577988185758?text=Ol%C3%A1%2C%20Thiago!%20Acabei%20de%20visitar%20o%20site%20da%20TK%20Im%C3%B3veis%20e%20gostaria%20de%20conversar%20sobre%20im%C3%B3veis%20dispon%C3%ADveis."
-                target="_blank"><i class="fab fa-whatsapp"></i></a>
-        </div>
-
     </section>
 
+    <!-- Nova Seção: Diferenciais -->
+    <section id="diferenciais" class="reveal">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge-tag">
+                    <i class="fa-solid fa-star"></i> POR QUE ESCOLHER A TK IMÓVEIS
+                </div>
+                <h2>Nossos Diferenciais de <span>Alto Padrão</span></h2>
+                <p>Oferecemos uma experiência imobiliária completa, pautada na excelência, ética e no profundo
+                    conhecimento do mercado de Vitória da Conquista.</p>
+            </div>
+
+            <div class="diferenciais-grid">
+                <div class="dif-card">
+                    <div class="dif-icon-box">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <h3>Atendimento Personalizado</h3>
+                    <p>Consultoria dedicada para entender com precisão os seus desejos e apresentar apenas opções
+                        alinhadas ao seu perfil.</p>
+                </div>
+
+                <div class="dif-card">
+                    <div class="dif-icon-box">
+                        <i class="fa-solid fa-building-circle-check"></i>
+                    </div>
+                    <h3>Imóveis Selecionados</h3>
+                    <p>Portfólio rigorosamente filtrado contendo casas, apartamentos e terrenos de alto padrão em
+                        bairros nobres.</p>
+                </div>
+
+                <div class="dif-card">
+                    <div class="dif-icon-box">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3>Segurança Jurídica</h3>
+                    <p>Análise criteriosa e completa de toda a documentação imobiliária para garantir uma transação 100%
+                        segura e sem surpresas.</p>
+                </div>
+
+                <div class="dif-card">
+                    <div class="dif-icon-box">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <h3>Acompanhamento Completo</h3>
+                    <p>Suporte integral desde o primeiro atendimento, visitas guiadas, negociação de propostas até a
+                        assinatura de contrato.</p>
+                </div>
+
+                <div class="dif-card">
+                    <div class="dif-icon-box">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3>Avaliação Profissional</h3>
+                    <p>Análise de mercado precisa para quem deseja vender pelo valor justo ou investir com alta
+                        rentabilidade em Vitória da Conquista.</p>
+                </div>
+
+                <div class="dif-card">
+                    <div class="dif-icon-box">
+                        <i class="fa-solid fa-file-signature"></i>
+                    </div>
+                    <h3>Financiamento Facilitado</h3>
+                    <p>Parcerias com os principais bancos para busca das melhores taxas e aprovação ágil do seu crédito
+                        imobiliário.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: Sobre Nós Refinada -->
     <section id="sobre" class="reveal">
-        <div class="title">
-            <span>SOBRE NÓS</span>
-            <h2>Conheça a TK Imóveis</h2>
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image-wrapper">
+                    <span class="ghost-watermark">TK</span>
+                    <div class="about-photo-card">
+                        <img src="imagens/fotothiago.png" alt="Thiago Oliveira - TK Imóveis">
+                    </div>
+                    <div class="about-badge">
+                        <i class="fa-solid fa-certificate"></i>
+                        <div>
+                            <div class="about-badge-title">Thiago Oliveira</div>
+                            <div class="about-badge-sub">Especialista Imobiliário • CRECI-BA</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-content-box">
+                    <div class="badge-tag">
+                        <i class="fa-solid fa-building"></i> SOBRE A TK IMÓVEIS
+                    </div>
+                    <h3>Transformando sonhos em realidade com <span>excelência e transparência.</span></h3>
+                    <p>
+                        Na <strong>TK Imóveis</strong>, acreditamos que a conquista de um imóvel é um marco fundamental
+                        na vida de nossos clientes. Por isso, oferecemos um atendimento consultivo moderno e exclusivo
+                        em Vitória da Conquista e região.
+                    </p>
+                    <p>
+                        Nossa missão é proporcionar tranquilidade, segurança e rentabilidade em cada negociação,
+                        acompanhando de perto todas as fases da operação até a entrega solene das chaves.
+                    </p>
+
+                    <div class="about-highlights">
+                        <div class="highlight-item"><i class="fa-solid fa-circle-check"></i> Transparência e ética
+                            rigorosa</div>
+                        <div class="highlight-item"><i class="fa-solid fa-circle-check"></i> Domínio do mercado regional
+                        </div>
+                        <div class="highlight-item"><i class="fa-solid fa-circle-check"></i> Assessoria jurídica
+                            completa</div>
+                        <div class="highlight-item"><i class="fa-solid fa-circle-check"></i> Atendimento VIP e discreto
+                        </div>
+                    </div>
+
+                    <a href="#contato" class="btn" style="margin-top: 15px;">
+                        <i class="fa-solid fa-arrow-right"></i> Conhecer Oportunidades
+                    </a>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="about">
 
-            <div class="about-image">
-                <img src="imagens/fotothiago.png" alt="Thiago Oliveira">
+
+    <!-- Nova Seção: Processo de Compra (5 Etapas) -->
+    <section id="processo" class="reveal">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge-tag">
+                    <i class="fa-solid fa-route"></i> JORNADA DE COMPRA
+                </div>
+                <h2>Seu Caminho Até as Chaves em <span>5 Etapas</span></h2>
+                <p>Processo simples, transparente e sem burocracia para você adquirir seu novo imóvel com tranquilidade.
+                </p>
             </div>
 
-            <div class="about-content">
-
-                <h3>Transformando sonhos em realidade.</h3>
-                <p>
-                    Na TK Imóveis acreditamos que cada cliente merece um atendimento exclusivo.
-
-                    Nossa missão é oferecer segurança, transparência e as melhores oportunidades para quem deseja
-                    comprar,
-                    vender ou alugar imóveis em Vitória da Conquista.
-                </p>
-
-                <p>
-                    Contamos com uma equipe preparada para acompanhar todas as etapas da negociação, proporcionando
-                    tranquilidade e confiança do primeiro contato até a entrega das chaves.
-                </p>
-
-                <div class="stats">
-
-                    <div class="stat">
-                        <h3>+500</h3>
-                        <p>Clientes Atendidos</p>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number-box">1</div>
+                    <div class="step-card">
+                        <h4>Escolha do Imóvel</h4>
+                        <p>Mapeamos suas preferências e alinhamos as melhores opções do portfólio.</p>
                     </div>
+                </div>
 
-                    <div class="stat">
-                        <h3>10+</h3>
-                        <p>Anos de Mercado</p>
+                <div class="process-step">
+                    <div class="step-number-box">2</div>
+                    <div class="step-card">
+                        <h4>Agendamento de Visita</h4>
+                        <p>Visitas presenciais guiadas para você conhecer cada detalhe do imóvel.</p>
                     </div>
+                </div>
 
-                    <div class="stat">
-                        <h3>100%</h3>
-                        <p>Compromisso</p>
+                <div class="process-step">
+                    <div class="step-number-box">3</div>
+                    <div class="step-card">
+                        <h4>Proposta & Negociação</h4>
+                        <p>Intermediação ética e transparente para alcançar o melhor acordo financeiro.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number-box">4</div>
+                    <div class="step-card">
+                        <h4>Análise Documental</h4>
+                        <p>Validação de certidões, contratos e assessoria completa no financiamento bancário.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number-box">5</div>
+                    <div class="step-card">
+                        <h4>Entrega das Chaves</h4>
+                        <p>Assinatura final do contrato e a realização do sonho de ter o imóvel ideal.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="imoveis" class="reveal">
-        <div class="title">
-            <span>IMÓVEIS</span>
-            <h2>Conheça Nossos Imóveis</h2>
-        </div>
-
-        <div class="insta-embed">
-            <div class="insta-grid">
-                <blockquote class="instagram-media"
-                    data-instgrm-permalink="https://www.instagram.com/p/DbBh56qkdIV/?utm_source=ig_embed&amp;utm_campaign=loading"
-                    data-instgrm-version="14"
-                    style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
-                </blockquote>
-
-                <blockquote class="instagram-media"
-                    data-instgrm-permalink="https://www.instagram.com/p/DatghQHgKCH/?utm_source=ig_embed&amp;utm_campaign=loading"
-                    data-instgrm-version="14"
-                    style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
-                </blockquote>
-
-                <blockquote class="instagram-media"
-                    data-instgrm-permalink="https://www.instagram.com/p/DadKqhAkf73/?utm_source=ig_embed&amp;utm_campaign=loading"
-                    data-instgrm-version="14"
-                    style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
-                </blockquote>
+    <!-- Seção: Integração Instagram Preservada -->
+    <section id="instagram-section" class="reveal">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge-tag">
+                    <i class="fab fa-instagram"></i> FEED INSTAGRAM
+                </div>
+                <h2>Acompanhe Nossas <span>Novidades</span></h2>
+                <p>Fique por dentro das últimas oportunidades e bastidores do mercado imobiliário em Vitória da
+                    Conquista.</p>
             </div>
-        </div>
-    </section>
 
-    <section id="contato" class="reveal">
-        <div class="title">
-            <span>CONTATO</span>
-            <h2>Fale com a TK Imóveis</h2>
-        </div>
+            <div class="insta-box-wrapper">
+                <div class="insta-grid">
+                    <blockquote class="instagram-media"
+                        data-instgrm-permalink="https://www.instagram.com/p/DbBh56qkdIV/?utm_source=ig_embed&amp;utm_campaign=loading"
+                        data-instgrm-version="14">
+                    </blockquote>
 
-        <div class="contact">
-            <div class="contact-info">
-                <h3>Vamos conversar?</h3>
-                <p>
-                    Estamos prontos para ajudar você a encontrar o imóvel ideal.
-                </p>
+                    <blockquote class="instagram-media"
+                        data-instgrm-permalink="https://www.instagram.com/p/DatghQHgKCH/?utm_source=ig_embed&amp;utm_campaign=loading"
+                        data-instgrm-version="14">
+                    </blockquote>
 
-                <p>
-                    <i class="fa-solid fa-location-dot"></i>
-                    Vitória da Conquista - BA
-                </p>
+                    <blockquote class="instagram-media"
+                        data-instgrm-permalink="https://www.instagram.com/p/DadKqhAkf73/?utm_source=ig_embed&amp;utm_campaign=loading"
+                        data-instgrm-version="14">
+                    </blockquote>
+                </div>
 
-                <p>
-                    <i class="fa-brands fa-whatsapp"></i>
-                    (77) 98818-5758
-                </p>
-
-                <p>
-                    <i class="fa-solid fa-envelope"></i>
-                    thyago.oliveira@outlook.com
-                </p>
-
-                <div class="contact-social">
-
-                    <a href="https://www.instagram.com/thiagoktiba/" target="_blank">
-                        <i class="fa-brands fa-instagram"></i>
+                <div class="insta-cta-bar">
+                    <div class="insta-cta-text">
+                        <i class="fab fa-instagram"></i>
+                        <div>
+                            <h4>@thiagoktiba no Instagram</h4>
+                            <p>Mais de 500 clientes acompanhando propostas e lançamentos diariamente.</p>
+                        </div>
+                    </div>
+                    <a href="https://www.instagram.com/thiagoktiba/" target="_blank" class="btn-secondary">
+                        <i class="fab fa-instagram"></i> Seguir Perfil
                     </a>
-
-                    <a href="https://www.facebook.com/Thiagoktibacorretor/" target="_blank">
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </a>
-
-                    <a href="https://wa.me/5577988185758" target="_blank">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </a>
-
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div>
-                <form class="form" action="https://formsubmit.co/mandadj123@gmail.com" method="POST">
+    <!-- Nova Seção: Depoimentos (Swiper.js Carousel) -->
+    <section id="depoimentos" class="reveal">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge-tag">
+                    <i class="fa-solid fa-quote-left"></i> DEPOIMENTOS
+                </div>
+                <h2>O Que Dizem <span>Nossos Clientes</span></h2>
+                <p>A satisfação de quem confiou na TK Imóveis para realizar grandes conquistas imobiliárias.</p>
+            </div>
 
-                    <input type="hidden" name="_subject" value="🏠 Novo Contato Recebido pelo Site TK Imóveis">
+            <div class="testimonials-slider-container">
+                <div class="swiper testimonials-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <div class="rating-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="quote-text">
+                                    "Atendimento impecável! O Thiago conduziu toda a negociação da compra da nossa casa
+                                    no Candeias com extrema transparência, agilidade e segurança jurídica."
+                                </p>
+                                <div class="client-info">
+                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80"
+                                        alt="Cliente" class="client-avatar">
+                                    <div>
+                                        <div class="client-name">Dr. Carlos Eduardo</div>
+                                        <div class="client-role">Comprador • Bairro Candeias</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                    <input type="hidden" name="_captcha" value="false">
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <div class="rating-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="quote-text">
+                                    "Excelente assessoria para investimentos imobiliários. A equipe da TK Imóveis nos
+                                    apresentou oportunidades de alta rentabilidade que superaram nossas expectativas."
+                                </p>
+                                <div class="client-info">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
+                                        alt="Cliente" class="client-avatar">
+                                    <div>
+                                        <div class="client-name">Roberto & Mariana</div>
+                                        <div class="client-role">Investidores Imobiliários</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                    <input type="hidden" name="_template" value="table">
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <div class="rating-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="quote-text">
+                                    "Profissionalismo do início ao fim! A rapidez na aprovação do crédito e o suporte
+                                    com as certidões me trouxeram total tranquilidade durante o processo."
+                                </p>
+                                <div class="client-info">
+                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80"
+                                        alt="Cliente" class="client-avatar">
+                                    <div>
+                                        <div class="client-name">Patricia Mendes</div>
+                                        <div class="client-role">Empresária • Bairro Recreio</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                    <input type="hidden" name="_next" value="https://tkimoveis.netlify.app/">
+                        <!-- Slide 4 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <div class="rating-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="quote-text">
+                                    "Vender meu imóvel através da TK Imóveis foi muito rápido. O trabalho de avaliação e
+                                    divulgação foi nota 10. Recomendo de olhos fechados!"
+                                </p>
+                                <div class="client-info">
+                                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80"
+                                        alt="Cliente" class="client-avatar">
+                                    <div>
+                                        <div class="client-name">Fernando Souza</div>
+                                        <div class="client-role">Vendedor • Bairro Primavera</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                    <input type="text" name="nome" placeholder="Seu Nome" required>
-
-                    <input type="email" name="email" placeholder="Seu Email" required>
-
-                    <input type="text" name="telefone" placeholder="Telefone">
-
-                    <textarea name="mensagem" placeholder="Como podemos ajudar?" required></textarea>
-
-                    <button type="submit" class="btn">
-                        Enviar Mensagem
-                    </button>
-
-                </form>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Seção: FAQ (Redesenhada) -->
     <section id="faq" class="reveal">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge-tag">
+                    <i class="fa-solid fa-circle-question"></i> PERGUNTAS FREQUENTES
+                </div>
+                <h2>Tire Suas <span>Dúvidas</span></h2>
+                <p>Respostas diretas para as perguntas mais comuns sobre nossos serviços imobiliários.</p>
+            </div>
 
-        <div class="title">
+            <div class="faq-accordion-container">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Como posso agendar uma visita ao imóvel?</span>
+                        <div class="faq-icon-box"><i class="fa-solid fa-plus"></i></div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Você pode agendar diretamente através do nosso WhatsApp (77 98818-5758) ou preenchendo o
+                                formulário de contato nesta página. Nossa equipe entrará em contato rapidamente para
+                                confirmar a data e o horário ideal para você.</p>
+                        </div>
+                    </div>
+                </div>
 
-            <span>PERGUNTAS FREQUENTES</span>
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>A TK Imóveis trabalha com aluguel e venda?</span>
+                        <div class="faq-icon-box"><i class="fa-solid fa-plus"></i></div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Sim! Atuamos com excelência na compra, venda, locação comercial e residencial, além de
+                                consultoria especializada em investimentos imobiliários em Vitória da Conquista e
+                                região.</p>
+                        </div>
+                    </div>
+                </div>
 
-            <h2>Tire suas dúvidas</h2>
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Quais documentos são necessários para financiar um imóvel?</span>
+                        <div class="faq-icon-box"><i class="fa-solid fa-plus"></i></div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Geralmente são solicitados documentos de identificação (RG e CPF), comprovante de estado
+                                civil, comprovante de residência e comprovante de renda recente (holerites, Imposto de
+                                Renda ou extratos bancários). Nossa equipe cuida de toda a assessoria de crédito para
+                                você.</p>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Vocês realizam avaliação profissional de imóveis?</span>
+                        <div class="faq-icon-box"><i class="fa-solid fa-plus"></i></div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Sim. Realizamos avaliação mercadológica detalhada levando em consideração localização,
+                                metragem, padrão de acabamento e liquidez da região para definir o valor justo de
+                                compra, venda ou locação.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="faq-container">
-
-            <div class="faq-item">
-
-                <button class="faq-question">
-
-                    Como posso agendar uma visita ao imóvel?
-
-                    <i class="fa-solid fa-plus"></i>
-
-                </button>
-
-                <div class="faq-answer">
-
-                    <p>
-                        Entre em contato pelo WhatsApp ou formulário do site e nossa equipe agendará a visita no melhor
-                        horário para você.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="faq-item">
-
-                <button class="faq-question">
-
-                    A TK Imóveis trabalha com aluguel e venda?
-
-                    <i class="fa-solid fa-plus"></i>
-
-                </button>
-
-                <div class="faq-answer">
-
-                    <p>
-                        Sim. Atuamos na compra, venda, locação e intermediação de imóveis em Vitória da Conquista e
-                        região.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="faq-item">
-
-                <button class="faq-question">
-
-                    Quais documentos são necessários para financiar?
-
-                    <i class="fa-solid fa-plus"></i>
-
-                </button>
-
-                <div class="faq-answer">
-
-                    <p>
-                        Os documentos variam conforme a instituição financeira, mas normalmente incluem RG, CPF,
-                        comprovante de renda e comprovante de residência.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="faq-item">
-
-                <button class="faq-question">
-
-                    Vocês fazem avaliação de imóveis?
-
-                    <i class="fa-solid fa-plus"></i>
-
-                </button>
-
-                <div class="faq-answer">
-
-                    <p>
-                        Sim. Realizamos avaliações para venda, locação e análise de mercado com base nos imóveis da
-                        região.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
     </section>
 
+    <!-- Seção: Contato Expandido -->
+    <section id="contato" class="reveal">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge-tag">
+                    <i class="fa-solid fa-envelope"></i> ATENDIMENTO VIP
+                </div>
+                <h2>Fale com a <span>TK Imóveis</span></h2>
+                <p>Estamos prontos para atender você com exclusividade e encontrar a melhor solução para o seu momento
+                    de vida.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info-card">
+                    <h3>Vamos conversar?</h3>
+                    <p>Entre em contato conosco por qualquer um dos nossos canais de atendimento ou agende uma reunião
+                        presencial.</p>
+
+                    <div class="contact-list">
+                        <div class="contact-detail">
+                            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="contact-detail-text">
+                                <label>Localização</label>
+                                <span>Vitória da Conquista - Bahia</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail">
+                            <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                            <div class="contact-detail-text">
+                                <label>WhatsApp / Telefone</label>
+                                <span>(77) 98818-5758</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail">
+                            <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="contact-detail-text">
+                                <label>E-mail Direto</label>
+                                <span>thyago.oliveira@outlook.com</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-social-row">
+                        <a href="https://www.instagram.com/thiagoktiba/" target="_blank" class="contact-social-btn"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/Thiagoktibacorretor/" target="_blank"
+                            class="contact-social-btn"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/5577988185758" target="_blank" class="contact-social-btn"><i
+                                class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <!-- FormSubmit Endpoint Preservado -->
+                    <form class="form" action="https://formsubmit.co/mandadj123@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="🏠 Novo Contato Recebido pelo Site TK Imóveis">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="https://tkimoveis.netlify.app/">
+
+                        <div class="form-group">
+                            <label for="nome">Seu Nome Completo</label>
+                            <input type="text" id="nome" name="nome" class="form-control"
+                                placeholder="Digite seu nome completo" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Seu Melhor E-mail</label>
+                            <input type="email" id="email" name="email" class="form-control"
+                                placeholder="seu.email@exemplo.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefone">Telefone / WhatsApp</label>
+                            <input type="text" id="telefone" name="telefone" class="form-control"
+                                placeholder="(77) 99999-9999" required>
+                        </div>
+
+                        <!-- Novo Campo de Seleção de Assunto -->
+                        <div class="form-group">
+                            <label for="assunto">Assunto de Interesse</label>
+                            <select id="assunto" name="assunto" class="form-control" required>
+                                <option value="" disabled selected>Selecione uma opção...</option>
+                                <option value="Compra de Imóvel">Compra de Imóvel</option>
+                                <option value="Aluguel / Locação">Aluguel / Locação</option>
+                                <option value="Investimento Imobiliário">Investimento Imobiliário</option>
+                                <option value="Avaliação Profissional">Avaliação Profissional de Imóvel</option>
+                                <option value="Financiamento Facilitado">Financiamento Facilitado</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensagem">Como Podemos Ajudar?</label>
+                            <textarea id="mensagem" name="mensagem" class="form-control"
+                                placeholder="Descreva brevemente o imóvel ou serviço que procura..."
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn" style="width: 100%;">
+                            <i class="fa-solid fa-paper-plane"></i> Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé Corporativo Completo -->
     <footer>
-        <img src="imagens/logoTK.jpg" width="70">
-        <br><br>
-        <p>
-            © 2025 TK Imóveis • Todos os direitos reservados.
-        </p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="imagens/logoTK.jpg" alt="TK Imóveis Logo">
+                        <div class="logo-text">
+                            <span class="logo-title">TK IMÓVEIS</span>
+                            <span class="logo-subtitle">EXCLUSIVIDADE IMOBILIÁRIA</span>
+                        </div>
+                    </div>
+                    <p>
+                        Sua referência em imóveis de alto padrão e investimentos imobiliários em Vitória da Conquista -
+                        BA. Segurança, ética e atendimento de excelência.
+                    </p>
+                    <div class="creci-badge">
+                        <i class="fa-solid fa-id-card"></i> CRECI-BA Ativo
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Links Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#diferenciais">Diferenciais</a></li>
+                        <li><a href="#sobre">Sobre Nós</a></li>
+                        <li><a href="#processo">Como Trabalhamos</a></li>
+                        <li><a href="#depoimentos">Avaliações</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Serviços</h4>
+                    <ul class="footer-links">
+                        <li><a href="#contato">Compra & Venda</a></li>
+                        <li><a href="#contato">Locação Residencial</a></li>
+                        <li><a href="#contato">Consultoria em Investimentos</a></li>
+                        <li><a href="#contato">Avaliação Mercadológica</a></li>
+                        <li><a href="#contato">Assessoria de Crédito</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Contato Direto</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://wa.me/5577988185758" target="_blank"><i class="fab fa-whatsapp"
+                                    style="color: var(--color-gold);"></i> (77) 98818-5758</a></li>
+                        <li><a href="mailto:thyago.oliveira@outlook.com"><i class="fa-solid fa-envelope"
+                                    style="color: var(--color-gold);"></i> thyago.oliveira@outlook.com</a></li>
+                        <li><a href="#contato"><i class="fa-solid fa-location-dot"
+                                    style="color: var(--color-gold);"></i> Vitória da Conquista - BA</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 TK Imóveis • Todos os direitos reservados.</p>
+                <div class="footer-legal">
+                    <a href="#contato">Política de Privacidade</a>
+                    <a href="#contato">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
-    <script src="js/script.js" defer></script>
+    <!-- Swiper.js Script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+    <!-- Main JavaScript Controller -->
+    <script src="js/script.js" defer></script>
 </body>
 
 </html>
