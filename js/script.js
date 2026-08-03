@@ -26,6 +26,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelectorAll('.nav-link');
 
   if (hamburger && navMenu) {
+    const closeMenu = () => {
+      navMenu.classList.remove('active');
+      const icon = hamburger.querySelector('i');
+      if (icon) {
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      }
+    };
+
     hamburger.addEventListener('click', () => {
       navMenu.classList.toggle('active');
       const icon = hamburger.querySelector('i');
@@ -42,13 +51,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        const icon = hamburger.querySelector('i');
-        if (icon) {
-          icon.classList.remove('fa-xmark');
-          icon.classList.add('fa-bars');
-        }
+        closeMenu();
       });
+    });
+
+    // Fechar ao clicar fora do menu ou pressionar a tecla ESC
+    document.addEventListener('click', (e) => {
+      if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        closeMenu();
+      }
     });
   }
 
