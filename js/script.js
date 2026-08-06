@@ -246,4 +246,75 @@ document.addEventListener('DOMContentLoaded', () => {
     statsObserver.observe(statsContainer);
   }
 
+  // 10. Envio AJAX do Formulário de Contato com Feedback via SweetAlert2
+  const contactForm = document.querySelector('.form');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalBtnHTML = submitBtn ? submitBtn.innerHTML : '<i class="fa-solid fa-paper-plane"></i> Enviar Mensagem';
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
+      }
+
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/mandadj123@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json'
+          },
+          body: new FormData(contactForm)
+        });
+
+        if (response.ok) {
+          if (typeof Swal !== 'undefined') {
+            Swal.fire({
+              icon: 'success',
+              title: 'Mensagem enviada!',
+              text: 'Obrigado pelo contato! Nossa equipe da TK Imóveis vai entrar em contato em breve.',
+              confirmButtonText: 'Fechar',
+              confirmButtonColor: '#d6b56a',
+              customClass: {
+                popup: 'swal-tk-popup',
+                confirmButton: 'swal-tk-button'
+              }
+            }).then(() => {
+              contactForm.reset();
+            });
+          } else {
+            alert('Mensagem enviada com sucesso! Nossa equipe da TK Imóveis vai entrar em contato em breve.');
+            contactForm.reset();
+          }
+        } else {
+          throw new Error('Falha no envio do formulário');
+        }
+      } catch (error) {
+        if (typeof Swal !== 'undefined') {
+          Swal.fire({
+            icon: 'error',
+            title: 'Ops, algo deu errado',
+            text: 'Não conseguimos enviar sua mensagem. Tente novamente ou entre em contato pelo WhatsApp.',
+            confirmButtonText: 'Entendi',
+            confirmButtonColor: '#d6b56a',
+            customClass: {
+              popup: 'swal-tk-popup',
+              confirmButton: 'swal-tk-button'
+            }
+          });
+        } else {
+          alert('Não conseguimos enviar sua mensagem. Tente novamente ou entre em contato pelo WhatsApp.');
+        }
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnHTML;
+        }
+      }
+    });
+  }
+
 });
