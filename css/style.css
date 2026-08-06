@@ -1535,6 +1535,21 @@ footer {
 
 }
 
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+  z-index: 998;
+}
+
+.nav-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
 @media (max-width: 992px) {
 
   .about-grid,
@@ -1546,22 +1561,51 @@ footer {
   .nav-menu {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
     width: 80%;
     max-width: 380px;
     height: 100vh;
     background: rgba(1, 7, 31, 0.98);
-    backdrop-filter: blur(25px);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     border-left: 1px solid var(--border-gold);
     flex-direction: column;
     justify-content: center;
     padding: 60px 40px;
-    transition: var(--transition-normal);
+    transform: translateX(100%);
+    transition: transform var(--transition-normal);
+    will-change: transform;
     z-index: 999;
   }
 
   .nav-menu.active {
-    right: 0;
+    transform: translateX(0);
+  }
+
+  /* Otimizações de Performance Mobile: Remoção do backdrop-filter (blur) */
+  header.scrolled {
+    background: rgba(1, 7, 31, 0.96);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .dif-card,
+  .testimonial-card,
+  .faq-item,
+  .contact-info-card,
+  .contact-form-wrapper,
+  .insta-box-wrapper,
+  .hero-stats-card,
+  .step-card,
+  .swiper-button-next,
+  .swiper-button-prev {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(4, 24, 94, 0.85);
+  }
+
+  .aura-bg {
+    filter: blur(50px);
   }
 
   .hamburger {
@@ -1582,6 +1626,10 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .aura-bg {
+    display: none;
+  }
+
   section {
     padding: 80px 0;
   }

@@ -6,18 +6,25 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // 1. Header Scroll State (Transparência -> Glass Solid)
+  // 1. Header Scroll State (Transparência -> Glass Solid com Throttling via rAF)
   const header = document.querySelector('header');
+  let isHeaderScrolling = false;
 
   const handleHeaderScroll = () => {
-    if (window.scrollY > 40) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
+    if (!isHeaderScrolling) {
+      requestAnimationFrame(() => {
+        if (window.scrollY > 40) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+        isHeaderScrolling = false;
+      });
+      isHeaderScrolling = true;
     }
   };
 
-  window.addEventListener('scroll', handleHeaderScroll);
+  window.addEventListener('scroll', handleHeaderScroll, { passive: true });
   handleHeaderScroll(); // Executar na inicialização
 
   // 2. Menu Hamburguer Mobile Drawer
@@ -34,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeMenu = () => {
       navMenu.classList.remove('active');
       overlay.classList.remove('active');
+      document.body.style.overflow = '';
       const icon = hamburger.querySelector('i');
       if (icon) {
         icon.classList.remove('fa-xmark');
@@ -44,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const openMenu = () => {
       navMenu.classList.add('active');
       overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
       const icon = hamburger.querySelector('i');
       if (icon) {
         icon.classList.remove('fa-bars');
@@ -63,9 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
       link.addEventListener('click', closeMenu);
     });
 
-    // Overlay cuida do "clicar fora" de forma confiável em touch
+    // Overlay cuida do "clicar fora" de forma única pelo evento de click
     overlay.addEventListener('click', closeMenu);
-    overlay.addEventListener('touchstart', closeMenu);
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && navMenu.classList.contains('active')) {
@@ -137,25 +145,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 6. Integração do Instagram (Preservando Lazy Loading Original)
+  // 6. Integração do Instagram via IntersectionObserver (Sem evento de scroll)
   const instaSection = document.querySelector('#instagram-section') || document.querySelector('#imoveis');
-  let instagramCarregado = false;
-
-  const loadInstagramEmbed = () => {
-    if (!instagramCarregado && instaSection) {
-      const posicao = instaSection.getBoundingClientRect().top;
-      if (posicao < window.innerHeight + 300) {
-        const script = document.createElement('script');
-        script.src = "https://www.instagram.com/embed.js";
-        script.async = true;
-        document.body.appendChild(script);
-        instagramCarregado = true;
-      }
-    }
-  };
-
-  window.addEventListener('scroll', loadInstagramEmbed);
-  loadInstagramEmbed();
+  if (instaSection) {
+    const instaObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const script = document.createElement('script');
+          script.src = "https://www.instagram.com/embed.js";
+          script.async = true;
+          document.body.appendChild(script);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      rootMargin: "300px 0px"
+    });
+    instaObserver.observe(instaSection);
+  }
 
   // 7. Reveal Observer de Elementos (AOS / Scroll Observer)
   const revealElements = document.querySelectorAll('.reveal');
