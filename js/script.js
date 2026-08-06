@@ -5,10 +5,10 @@
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  
+
   // 1. Header Scroll State (Transparência -> Glass Solid)
   const header = document.querySelector('header');
-  
+
   const handleHeaderScroll = () => {
     if (window.scrollY > 40) {
       header.classList.add('scrolled');
@@ -26,8 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelectorAll('.nav-link');
 
   if (hamburger && navMenu) {
+    // Cria o overlay dinamicamente
+    const overlay = document.createElement('div');
+    overlay.className = 'nav-overlay';
+    document.body.appendChild(overlay);
+
     const closeMenu = () => {
       navMenu.classList.remove('active');
+      overlay.classList.remove('active');
       const icon = hamburger.querySelector('i');
       if (icon) {
         icon.classList.remove('fa-xmark');
@@ -35,32 +41,31 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
-    hamburger.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
+    const openMenu = () => {
+      navMenu.classList.add('active');
+      overlay.classList.add('active');
       const icon = hamburger.querySelector('i');
       if (icon) {
-        if (navMenu.classList.contains('active')) {
-          icon.classList.remove('fa-bars');
-          icon.classList.add('fa-xmark');
-        } else {
-          icon.classList.remove('fa-xmark');
-          icon.classList.add('fa-bars');
-        }
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-xmark');
+      }
+    };
+
+    hamburger.addEventListener('click', () => {
+      if (navMenu.classList.contains('active')) {
+        closeMenu();
+      } else {
+        openMenu();
       }
     });
 
     navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        closeMenu();
-      });
+      link.addEventListener('click', closeMenu);
     });
 
-    // Fechar ao clicar fora do menu ou pressionar a tecla ESC
-    document.addEventListener('click', (e) => {
-      if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !hamburger.contains(e.target)) {
-        closeMenu();
-      }
-    });
+    // Overlay cuida do "clicar fora" de forma confiável em touch
+    overlay.addEventListener('click', closeMenu);
+    overlay.addEventListener('touchstart', closeMenu);
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && navMenu.classList.contains('active')) {
@@ -68,8 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-
-
 
   // 4. Accordion FAQ Inteligente
   const faqItems = document.querySelectorAll('.faq-item');

@@ -50,7 +50,8 @@ html {
   scroll-padding-top: 100px;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
@@ -1522,6 +1523,16 @@ footer {
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .whatsapp-nav-btn {
+    display: none;
+  }
+
+  .whatsapp-float-btn {
+    display: flex;
+  }
+
+
 }
 
 @media (max-width: 992px) {
@@ -1559,14 +1570,6 @@ footer {
 
   .social-sidebar {
     display: none;
-  }
-
-  .whatsapp-nav-btn {
-    display: none;
-  }
-
-  .whatsapp-float-btn {
-    display: flex;
   }
 
   .hero-title {
