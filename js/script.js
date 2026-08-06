@@ -197,4 +197,53 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // 9. Contador Animado para Estatísticas (Hero Stats Counter)
+  const statsContainer = document.querySelector('.hero-stats-card');
+  const statNumbers = document.querySelectorAll('.stat-number');
+
+  if (statsContainer && statNumbers.length > 0) {
+    const easeOutQuart = (t) => 1 - Math.pow(1 - t, 4);
+
+    const animateStats = () => {
+      const duration = 1800; // ms
+
+      statNumbers.forEach(el => {
+        const target = parseInt(el.getAttribute('data-target'), 10) || 0;
+        const prefix = el.getAttribute('data-prefix') || '';
+        const suffix = el.getAttribute('data-suffix') || '';
+        let startTime = null;
+
+        const updateCounter = (currentTime) => {
+          if (!startTime) startTime = currentTime;
+          const elapsedTime = currentTime - startTime;
+          const progress = Math.min(elapsedTime / duration, 1);
+          const easedProgress = easeOutQuart(progress);
+          const currentVal = Math.floor(easedProgress * target);
+
+          if (progress < 1) {
+            el.textContent = `${prefix}${currentVal}${suffix}`;
+            requestAnimationFrame(updateCounter);
+          } else {
+            el.textContent = `${prefix}${target}${suffix}`;
+          }
+        };
+
+        requestAnimationFrame(updateCounter);
+      });
+    };
+
+    const statsObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateStats();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.4
+    });
+
+    statsObserver.observe(statsContainer);
+  }
+
 });
